@@ -1,18 +1,38 @@
-$border: 1px solid blue;
+*{
+    margin: 0;
+    padding: 0;
+}
 
-.card {
-    margin: 0 auto;
-    width: 500px;
-    height: 80px;
-    padding: 1 rem;
-    border-radius: 5px;
-    border: $border;
+.disabled{
+    color: #737373
+}
+.enabled{
+    color: #029686
+}
 
-    h1 {
-        text-align: center;
-        color: darkred;
-        &:hover {
-            color: green;
+.main_inner{
+    position: absolute;
+    bottom: 0;
+    min-width: 411px;
+    .info{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 120px;
+        font-size: 20px;
+        box-shadow: 0 -2px 5px rgba(#000, .1) inset;
+    }
+    .control{
+        height: 60px;
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .control_button{
+            text-align: center;
+            align-items: center;
+            margin-left: 10px;
+            margin-right: 10px;
         }
     }
 }
