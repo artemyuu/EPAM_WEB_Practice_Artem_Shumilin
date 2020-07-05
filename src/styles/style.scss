@@ -1,18 +1,27 @@
+$disabledColor: #737373;
+$enabledColor: #029686;
+$backgroundColor: white;
+
 *{
     margin: 0;
     padding: 0;
 }
 
 .disabled{
-    color: #737373
+    color: $disabledColor
 }
 .enabled{
-    color: #029686
+    color: $enabledColor
+}
+
+main{
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
 }
 
 .main_inner{
-    position: absolute;
-    bottom: 0;
     min-width: 411px;
     .info{
         display: flex;
@@ -24,7 +33,7 @@
     }
     .control{
         height: 60px;
-        background-color: white;
+        background-color: $backgroundColor;
         display: flex;
         justify-content: space-between;
         align-items: center;
