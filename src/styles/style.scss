@@ -27,7 +27,7 @@ main{
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 120px;
+        height: 400px;
         font-size: 20px;
         box-shadow: 0 -2px 5px rgba(#000, .1) inset;
     }
@@ -44,4 +44,10 @@ main{
             margin-right: 10px;
         }
     }
+}
+
+li{
+    list-style: circle;
+    border-bottom: 1px solid #737373;
+    padding: 3px
 }
