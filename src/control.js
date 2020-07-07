@@ -79,7 +79,7 @@ module.exports = ()=> {
             console.log(data)
             for(let i = 0; i < data.length; i++){
                 const li = document.createElement('li')
-                const audioBlob = data[i].audioBlob
+                const audioBlob = new Blob([new Uint8Array(data[i].audioBlob[0].data).buffer])
                 li.innerHTML = `Voice: ${data[i].timeStamp.slice(0, -38)}`
                 ul.appendChild(li)
                 li.addEventListener('click', ()=>{
@@ -92,4 +92,3 @@ module.exports = ()=> {
     })
 
 }
-

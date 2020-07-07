@@ -30,6 +30,7 @@ main{
         height: 400px;
         font-size: 20px;
         box-shadow: 0 -2px 5px rgba(#000, .1) inset;
+        overflow-y: scroll;
     }
     .control{
         height: 60px;
