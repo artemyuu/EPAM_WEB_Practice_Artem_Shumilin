@@ -1,5 +1,6 @@
 $disabledColor: #737373;
 $enabledColor: #029686;
+$pauseColor: #F16803;
 $backgroundColor: white;
 
 *{
@@ -27,7 +28,7 @@ main{
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 400px;
+        height: 800px;
         font-size: 20px;
         box-shadow: 0 -2px 5px rgba(#000, .1) inset;
         overflow-y: scroll;
@@ -51,4 +52,9 @@ li{
     list-style: circle;
     border-bottom: 1px solid #737373;
     padding: 3px
+}
+
+.pause{
+    display: none;
+    color: $pauseColor
 }

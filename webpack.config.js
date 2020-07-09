@@ -11,6 +11,9 @@ module.exports = {
         filename: '[name].[hash].js',
         path: path.resolve(__dirname, 'dist')
     },
+    devServer: {
+        port: 8080
+    },
     plugins: [
         new HTMLWebpackPlugin({
             template: './index.html'

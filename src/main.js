@@ -83,6 +83,7 @@ async function getAllVoices(){
     const response = await fetch('https://voicy-speaker.herokuapp.com/voices')
     const data = await response.json()
     for(let i = 0; i < data.length; i++){
+        console.log(data.length);
         const li = document.createElement('li')
         if((Array.isArray(data[i].audioBlob) === true)){
             if((data[i].audioBlob.length != 0 && data[i].audioBlob[0] != null)){
