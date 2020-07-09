@@ -88,11 +88,14 @@ async function getAllVoices(){
             if((data[i].audioBlob.length != 0 && data[i].audioBlob[0] != null)){
                 const audioBlob = new Blob([new Uint8Array(data[i].audioBlob[0].data).buffer])
                 li.innerHTML = `Voice: ${data[i].timeStamp.slice(0, -38)}`
+                li.className = 'li-item'
                 ul.appendChild(li)
-                li.addEventListener('click', ()=>{
-                    const audioUrl = URL.createObjectURL(audioBlob)
-                    const audio = new Audio(audioUrl)
-                    audio.play()
+                ul.addEventListener('click', e => {
+                    if(e.target.classList.contains('li-item')){
+                        const audioUrl = URL.createObjectURL(audioBlob)
+                        const audio = new Audio(audioUrl)
+                        audio.play()
+                    }
                 })
             }
         }
