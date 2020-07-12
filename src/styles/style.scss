@@ -55,6 +55,13 @@ li{
 }
 
 .pause{
-    display: none;
     color: $pauseColor
+}
+
+.hidden{
+    display: none;
+}
+
+.show{
+    display: block;
 }

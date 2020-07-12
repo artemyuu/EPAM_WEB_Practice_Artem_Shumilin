@@ -1,2 +1,4 @@
 import './styles/style.scss'
-import './control.js'
+import {startApp} from './control.js'
+startApp()
+
