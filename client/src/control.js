@@ -7,12 +7,14 @@ export const startApp = () =>{
         }
         const info = document.querySelector('.info')
         const control = document.querySelectorAll('.disabled')
-    
+
         const io = require('socket.io-client')
-        const socket = io.connect('https://voicy-speaker.herokuapp.com/',{reconnection: true})
+        const socket = io.connect('http://localhost:3000',{reconnection: true})
         let streamMode = false
-    
         socket.on('audioMessage', playStreamMsg)
+        socket.on('user', data =>{
+            console.log(data);
+        })
     
         for(let i = 0; i < control.length; i++){    
                 control[i].addEventListener('click', (e)=>{
@@ -42,7 +44,7 @@ export const startApp = () =>{
                 })
             }
         
-        function playStreamMsg(){
+        function playStreamMsg(data){
             if(streamMode){
                 const audioBlob = new Blob(data)
                 const audioUrl = URL.createObjectURL(audioBlob)
@@ -88,7 +90,7 @@ export const startApp = () =>{
             info.innerHTML = ''
             const ul = document.createElement('ul')
             info.appendChild(ul)
-            const response = await fetch('https://voicy-speaker.herokuapp.com/voices')
+            const response = await fetch('http://localhost:3000/voices')
             const data = await response.json()
             console.log(data);
             for(let i = 0; i < data.length; i++){
